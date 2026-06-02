@@ -1,10 +1,13 @@
-const CACHE_NAME = 'cavai-high-impact-v1';
+const CACHE_NAME = 'cavai-high-impact-v2';
 
 const CACHE_ASSETS = [
   './',
   './index.html',
   './styles.css',
   './script.js',
+  './assets/fonts/lato-300.ttf',
+  './assets/fonts/unbounded-300.ttf',
+  './assets/fonts/unbounded-500.ttf',
   './assets/andreas-akesson.jpeg',
   './assets/cavai-logo.svg',
   './assets/favicon.ico',

@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("assets/fonts/lato-300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("assets/fonts/unbounded-300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/unbounded-500.ttf") format("truetype");
+}
+
 :root {
   --ink: #101010;
   --muted: #626262;
@@ -8,8 +32,8 @@
   --accent: #ff7f89;
   --radius: 28px;
   --max: 1180px;
-  --body-font: "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
-  --display-font: "Arial Rounded MT Bold", "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
+  --body-font: "Lato", Inter, Arial, sans-serif;
+  --display-font: "Unbounded", Inter, Arial, sans-serif;
 }
 
 * {
