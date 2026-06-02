@@ -2,7 +2,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.14 });
+}, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
