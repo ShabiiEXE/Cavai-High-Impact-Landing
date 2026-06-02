@@ -121,12 +121,16 @@ img {
 
 .header-cta {
   font-family: var(--display-font);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 300;
   padding: 10px 18px;
   border-radius: 999px;
   background: var(--accent);
   color: white;
-  font-size: 13px
+  font-size: 13px;
+  transition: transform .25s ease, box-shadow .25s ease
 }
 
 .section {
@@ -192,7 +196,8 @@ img {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.button:hover {
+.button:hover,
+.header-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 35px rgba(255, 27, 95, 0.336)
 }
@@ -370,6 +375,10 @@ img {
 
 .format-content p {
   margin: 0 0 18px
+}
+
+.format-content > .button {
+  min-width: 220px
 }
 
 .tags {

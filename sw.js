@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cavai-high-impact-v2';
+const CACHE_NAME = 'cavai-high-impact-v3';
 
 const CACHE_ASSETS = [
   './',
@@ -30,7 +30,12 @@ const CACHE_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(CACHE_ASSETS))
+      .then((cache) => Promise.all(
+        CACHE_ASSETS.map((asset) => (
+          fetch(new Request(asset, { cache: 'reload' }))
+            .then((response) => cache.put(asset, response))
+        ))
+      ))
       .then(() => self.skipWaiting())
   );
 });
