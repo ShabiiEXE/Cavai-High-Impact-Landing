@@ -8,8 +8,8 @@
   --accent: #ff7f89;
   --radius: 28px;
   --max: 1180px;
-  --body-font: "Lato", Inter, Arial, sans-serif;
-  --display-font: "Unbounded", Inter, Arial, sans-serif;
+  --body-font: "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
+  --display-font: "Arial Rounded MT Bold", "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -320,7 +320,6 @@ img {
   min-height: 100%;
   border-radius: 999px;
   object-fit: cover;
-  box-shadow: 0 22px 48px rgba(0, 0, 0, .2)
 }
 
 .contact-actions {
