@@ -9,6 +9,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <svg aria-hidden="true" class="icon-sprite" focusable="false">
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+      <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+      <path d="m22 7-10 7L2 7" />
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </symbol>
+  </svg>
   <div class="page-bg"></div>
 
   <header class="site-header">
@@ -20,18 +35,26 @@
       <a href="#volvo">360° View</a>
       <a href="#isdin">Product Showcase</a>
     </nav>
-    <a class="header-cta" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">Contact</a>
+    <a class="header-cta" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">
+      <svg class="button-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+      <span>Contact</span>
+    </a>
   </header>
 
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Cavai creative showcase</p>
         <h1>High Impact<br />Formats</h1>
-        <p class="lead">Immersive, data-driven, interactive experiences designed to make campaigns feel more useful, memorable and engaging.</p>
+        <p class="lead">We make ads for people, just as much as we make them for brands. Immersive, data-driven, interactive experiences designed to make campaigns feel more useful, memorable and engaging</p>
         <div class="hero-actions">
-          <a class="button primary" href="https://docs.google.com/presentation/d/1TV0a4SgIMBUHr4a_z17m_VjwqAbs5Gzy9KQXGqEluHw/edit?usp=sharing">Explore formats</a>
-          <a class="button ghost" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">Start a project</a>
+          <a class="button primary" href="https://docs.google.com/presentation/d/1TV0a4SgIMBUHr4a_z17m_VjwqAbs5Gzy9KQXGqEluHw/edit?usp=sharing">
+            <svg class="button-icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+            <span>Explore our interactive formats</span>
+          </a>
+          <a class="button ghost" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">
+            <svg class="button-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+            <span>Start a campaign</span>
+          </a>
         </div>
       </div>
       <div class="hero-visual reveal" aria-hidden="true">
@@ -41,6 +64,13 @@
           <strong>Feeds, video, 3D, CTV and product layers.</strong>
         </div>
         <div class="hero-card hero-card-float">
+          <svg class="hero-card-graphic live-graphic" viewBox="0 0 150 96" aria-hidden="true">
+            <path d="M14 68h24l12-26 18 42 18-58 14 32h36" />
+            <circle cx="118" cy="58" r="10" />
+            <circle cx="118" cy="58" r="21" />
+            <path d="M18 20h36" />
+            <path d="M18 34h24" />
+          </svg>
           <span>Live data</span>
           <strong>Real-time creative updates.</strong>
         </div>
@@ -51,53 +81,81 @@
     <section id="live-score" class="format section reveal">
       <div class="format-content">
         <p class="eyebrow">Live score | Coca-Cola</p>
-        <h2>Match information that reacts in real time.</h2>
+        <h2>Match information that reacts in real time</h2>
         <p>This creative experience showcases upcoming World Cup matches in an engaging and dynamic format, highlighting match dates, competition stages and relevant details.</p>
         <p>When a match is live, the experience automatically prioritizes and displays only the live match cards. Through real-time data integration, the score and live match timer update continuously.</p>
         <div class="tags"><span>Real-time feed</span><span>Dynamic cards</span><span>World Cup</span></div>
-        <a class="button primary" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-89022/banner/88eeed303944820f32e01ef733f883a5">Creative preview</a>
+        <a class="button primary desktop-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-89022/banner/88eeed303944820f32e01ef733f883a5">
+          <span>Creative preview</span>
+          <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
       </div>
       <a class="visual-link visual-stack phone-stack" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-89022/banner/88eeed303944820f32e01ef733f883a5" aria-label="Open Coca-Cola live score creative preview">
         <img class="device device-back" src="assets/image4.gif" alt="Coca-Cola match card creative preview" />
         <img class="device device-front" src="assets/image6.gif" alt="Coca-Cola live score creative preview" />
       </a>
+      <a class="button primary mobile-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-89022/banner/88eeed303944820f32e01ef733f883a5">
+        <span>Creative preview</span>
+        <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+      </a>
             <div class="format-content">
-        <h2>Live score mechanics designed for the big screen.</h2>
+        <h2 class="ctv-title">Never miss the action even during a break</h2>
         <p>This CTV format presents the same match experience in a living-room context, with relevant match information surfaced clearly for large-format viewing.</p>
         <p>Live matches are prioritized automatically, while scores and timers are kept up to date through real-time data integration.</p>
         <div class="tags"><span>CTV</span></div>
-        <a class="button light" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-93499/banner/eed720af31ed24b0f544d5866f52bdaa">Creative preview</a>
+        <a class="button light desktop-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-93499/banner/eed720af31ed24b0f544d5866f52bdaa">
+          <span>Creative preview</span>
+          <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
       </div>
       <a class="visual-link ctv-overlay-art" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-93499/banner/eed720af31ed24b0f544d5866f52bdaa" aria-label="Open Coca-Cola CTV creative preview">
         <img src="assets/image20.png" alt="Coca-Cola CTV creative preview" />
+      </a>
+      <a class="button light mobile-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/50942-53073-54475-93499/banner/eed720af31ed24b0f544d5866f52bdaa">
+        <span>Creative preview</span>
+        <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
       </a>
     </section>
 
     <section id="volvo" class="format section reveal">
       <div class="format-content">
         <p class="eyebrow">360° view | Volvo</p>
-        <h2>An interactive vehicle interior users can explore.</h2>
+        <h2>An interactive vehicle interior users can explore</h2>
         <p>This creative experience provides a unique 360° display of the vehicle interior. Alongside the marker system, users can move around inside the car using the mouse cursor or finger and discover highlights.</p>
         <p>Intro animations clarify how the ad works by showing that the image moves automatically and indicating that the user can drag.</p>
         <div class="tags"><span>360°</span><span>Hotspots</span><span>Immersive interaction</span></div>
-        <a class="button primary" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/500-50259-54947-91901/banner/a6268458657f6af37ce972d45b969aab">Creative preview</a>
+        <a class="button primary desktop-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/500-50259-54947-91901/banner/a6268458657f6af37ce972d45b969aab">
+          <span>Creative preview</span>
+          <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
       </div>
       <a class="visual-link visual-stack single-phone" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/500-50259-54947-91901/banner/a6268458657f6af37ce972d45b969aab" aria-label="Open Volvo 360 creative preview">
         <img class="device volvo" src="assets/image12.gif" alt="Volvo 360 vehicle interior creative preview" />
+      </a>
+      <a class="button primary mobile-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/500-50259-54947-91901/banner/a6268458657f6af37ce972d45b969aab">
+        <span>Creative preview</span>
+        <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
       </a>
     </section>
 
     <section id="isdin" class="format section reveal">
       <div class="format-content">
         <p class="eyebrow">Product showcase | ISDIN</p>
-        <h2>Product exploration layered with video.</h2>
+        <h2>An interactive product line display</h2>
         <p>This creative experience showcases different products in the line in an environment alongside a video.</p>
         <p>Users can hover over or select items to learn more information about them, with a specific call to action shown for each product.</p>
-        <div class="tags"><span>Hotspots</span><span>Video</span><span>Contextual CTA</span></div>
-        <a class="button primary" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/51772-52998-54164-86740/banner/8ae585bc3f4ef1a2d6f4f52457df5117">Creative preview</a>
+        <div class="tags"><span>Hotspots</span><span>Contextual CTA</span></div>
+        <a class="button primary desktop-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/51772-52998-54164-86740/banner/8ae585bc3f4ef1a2d6f4f52457df5117">
+          <span>Creative preview</span>
+          <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
       </div>
       <a class="visual-link banner-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/51772-52998-54164-86740/banner/8ae585bc3f4ef1a2d6f4f52457df5117" aria-label="Open ISDIN product showcase creative preview">
         <img src="assets/image10.gif" alt="ISDIN product showcase creative preview" />
+      </a>
+      <a class="button primary mobile-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/51772-52998-54164-86740/banner/8ae585bc3f4ef1a2d6f4f52457df5117">
+        <span>Creative preview</span>
+        <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
       </a>
     </section>
 
@@ -115,7 +173,10 @@
                 </svg>
                 <span>Connect with me on LinkedIn</span>
               </a>
-              <a class="button light" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">Let's build</a>
+              <a class="button light" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">
+                <svg class="button-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                <span>Let's build together</span>
+              </a>
             </div>
           </div>
         </div>
