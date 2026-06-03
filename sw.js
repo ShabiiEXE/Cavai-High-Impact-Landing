@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cavai-high-impact-v121';
+const CACHE_NAME = 'cavai-high-impact-v125';
 
 const CACHE_ASSETS = [
   './',
