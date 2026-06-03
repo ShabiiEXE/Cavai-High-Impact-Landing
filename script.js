@@ -76,27 +76,20 @@ if (header) {
 
 const backToTop = document.querySelector('.back-to-top');
 let backToTopTicking = false;
-const backToTopMobile = window.matchMedia('(max-width: 860px)');
 
 const syncBackToTopVisibility = () => {
   if (!backToTop) return;
 
   const isVisible = window.scrollY > 220;
   backToTop.classList.toggle('is-visible', isVisible);
-  if (!isVisible) backToTop.classList.remove('is-arrow-paused');
   backToTopTicking = false;
 };
 
 if (backToTop) {
   syncBackToTopVisibility();
 
-  backToTop.addEventListener('pointerdown', () => {
-    if (backToTopMobile.matches) backToTop.classList.add('is-arrow-paused');
-  });
-
   backToTop.addEventListener('click', (event) => {
     event.preventDefault();
-    if (backToTopMobile.matches) backToTop.classList.add('is-arrow-paused');
     backToTop.blur();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
