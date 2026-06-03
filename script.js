@@ -6,6 +6,22 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const hash = link.getAttribute('href');
+    if (!hash || hash === '#top') return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    const offset = window.matchMedia('(max-width: 860px)').matches ? 82 : 110;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+    history.pushState(null, '', hash);
+  });
+});
+
 const typingWord = document.querySelector('.typing-word');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
