@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cavai-high-impact-v68';
+const CACHE_NAME = 'cavai-high-impact-v95';
 
 const CACHE_ASSETS = [
   './',
@@ -8,25 +8,15 @@ const CACHE_ASSETS = [
   './assets/fonts/lato-300.ttf',
   './assets/fonts/unbounded-300.ttf',
   './assets/fonts/unbounded-500.ttf',
-  './assets/andreas-akesson.jpeg',
   './assets/andreas-akesson.png',
   './assets/cavai-logo.svg',
   './assets/doggo0.png',
   './assets/doggo1.png',
   './assets/favicon.ico',
-  './assets/image1.png',
-  './assets/image3.png',
   './assets/image4.gif',
   './assets/image6.gif',
-  './assets/image7.gif',
-  './assets/image8.png',
-  './assets/image9.jpg',
   './assets/image10.gif',
-  './assets/image11.gif',
   './assets/image12.gif',
-  './assets/image13.png',
-  './assets/image14.png',
-  './assets/image15.png',
   './assets/image20.png',
   './assets/star.png',
   './assets/brand-logos/adidas.svg',

@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/favicon.ico" sizes="any" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body id="top">
   <svg aria-hidden="true" class="icon-sprite" focusable="false">
     <symbol id="icon-external" viewBox="0 0 24 24">
       <path d="M15 3h6v6" />
@@ -41,10 +41,17 @@
     </a>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero section">
       <div class="hero-copy reveal">
-        <h1>High Impact<br />Formats</h1>
+        <h1>
+          <span class="desktop-hero-title">High<br />impact<br />formats<br /></span>
+          <span class="mobile-hero-title">High<br />impact<br />formats<br /></span><span class="typing-line">that<br class="typing-mobile-break" />
+            <span class="typing-headline" aria-live="polite">
+              <span class="typing-word" data-typing-words="convert,perform,engage,inspire,help,sell">convert</span><span class="typing-caret" aria-hidden="true">|</span>
+            </span>
+          </span>
+        </h1>
         <p class="lead">We make ads for people, just as much as we make them for brands. Immersive, data-driven, interactive experiences designed to make campaigns feel more useful, memorable and engaging.</p>
         <div class="hero-actions">
           <a class="button primary" target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1TV0a4SgIMBUHr4a_z17m_VjwqAbs5Gzy9KQXGqEluHw/edit?usp=sharing">
@@ -53,7 +60,7 @@
           </a>
           <a class="button ghost" target="_blank" rel="noopener" href="mailto:andreas.akesson@cavai.com?subject=High%20Impact%20Formats">
             <svg class="button-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
-            <span>Send us a brief</span>
+            <span>Get started</span>
           </a>
         </div>
       </div>
@@ -64,13 +71,7 @@
           <strong>Live-feeds, video, polls, 3D, CTV, and so much more</strong>
         </div>
         <div class="hero-card hero-card-float">
-          <svg class="hero-card-graphic live-graphic" viewBox="0 0 150 96" aria-hidden="true">
-            <path d="M14 68h24l12-26 18 42 18-58 14 32h36" />
-            <circle cx="118" cy="58" r="10" />
-            <circle cx="118" cy="58" r="21" />
-            <path d="M18 20h36" />
-            <path d="M18 34h24" />
-          </svg>
+
           <span>Real metrics</span>
           <strong>Transparent & trusted campaign reporting</strong>
         </div>
@@ -145,7 +146,7 @@
       <div class="format-content">
         <p class="eyebrow">Product showcase <span class="eyebrow-light">| ISDIN</span></p>
         <h2>An interactive product line display</h2>
-        <p>This creative experience showcases different products in the line in an environment alongside a video.</p>
+        <p>This display showcases different products in the line in an environment alongside a video.</p>
         <p>Users are shown they can hover over or select items to learn more information about them, with a specific call to action shown for each product.</p>
         <div class="tags"><span>Hotspots</span><span>Contextual CTA</span></div>
         <a class="button primary desktop-preview" target="_blank" rel="noopener" href="https://my.cavai.com/creatives/51772-52998-54164-86740/banner/8ae585bc3f4ef1a2d6f4f52457df5117">
@@ -286,6 +287,10 @@
       </div>
     </section>
   </main>
+
+  <a class="button primary back-to-top" href="#top" aria-label="Go back to top">
+    <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+  </a>
 
   <img class="footer-star" src="assets/star.png" alt="" aria-hidden="true" />
   <footer class="site-footer">

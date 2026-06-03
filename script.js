@@ -6,6 +6,42 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+const typingWord = document.querySelector('.typing-word');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (typingWord && !reduceMotion) {
+  const words = (typingWord.dataset.typingWords || '')
+    .split(',')
+    .map((word) => word.trim())
+    .filter(Boolean);
+  let wordIndex = 0;
+  let charIndex = typingWord.textContent.length;
+  let deleting = false;
+
+  const typeNextFrame = () => {
+    const currentWord = words[wordIndex] || '';
+    typingWord.textContent = currentWord.slice(0, charIndex);
+
+    if (!deleting && charIndex === currentWord.length) {
+      deleting = true;
+      window.setTimeout(typeNextFrame, 1200);
+      return;
+    }
+
+    if (deleting && charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      window.setTimeout(typeNextFrame, 220);
+      return;
+    }
+
+    charIndex += deleting ? -1 : 1;
+    window.setTimeout(typeNextFrame, deleting ? 46 : 78);
+  };
+
+  window.setTimeout(typeNextFrame, 900);
+}
+
 const header = document.querySelector('.site-header');
 const headerRevealTarget = document.querySelector('.hero h1');
 let headerTicking = false;
@@ -34,6 +70,48 @@ if (header) {
     if (!headerTicking) {
       window.requestAnimationFrame(syncHeaderVisibility);
       headerTicking = true;
+    }
+  }, { passive: true });
+}
+
+const backToTop = document.querySelector('.back-to-top');
+let backToTopTicking = false;
+const backToTopMobile = window.matchMedia('(max-width: 860px)');
+
+const syncBackToTopVisibility = () => {
+  if (!backToTop) return;
+
+  const isVisible = window.scrollY > 220;
+  backToTop.classList.toggle('is-visible', isVisible);
+  if (!isVisible) backToTop.classList.remove('is-arrow-paused');
+  backToTopTicking = false;
+};
+
+if (backToTop) {
+  syncBackToTopVisibility();
+
+  backToTop.addEventListener('pointerdown', () => {
+    if (backToTopMobile.matches) backToTop.classList.add('is-arrow-paused');
+  });
+
+  backToTop.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (backToTopMobile.matches) backToTop.classList.add('is-arrow-paused');
+    backToTop.blur();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!backToTopTicking) {
+      window.requestAnimationFrame(syncBackToTopVisibility);
+      backToTopTicking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    if (!backToTopTicking) {
+      window.requestAnimationFrame(syncBackToTopVisibility);
+      backToTopTicking = true;
     }
   }, { passive: true });
 }
