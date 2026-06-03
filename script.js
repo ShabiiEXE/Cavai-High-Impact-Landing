@@ -160,6 +160,62 @@ if (canUsePointerParallax && parallaxGrids.length) {
   });
 }
 
+if (canUsePointerParallax && header) {
+  let headerParallaxTicking = false;
+
+  const syncHeaderGridParallax = (event) => {
+    const x = ((event.clientX / window.innerWidth) - .5) || 0;
+    const y = ((event.clientY / window.innerHeight) - .5) || 0;
+    const intensity = header.classList.contains('header-scrolled') ? 16 : 0;
+
+    header.style.setProperty('--header-grid-x', `${x * intensity}px`);
+    header.style.setProperty('--header-grid-y', `${y * intensity}px`);
+    headerParallaxTicking = false;
+  };
+
+  window.addEventListener('pointermove', (event) => {
+    if (!headerParallaxTicking) {
+      window.requestAnimationFrame(() => syncHeaderGridParallax(event));
+      headerParallaxTicking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('pointerleave', () => {
+    header.style.setProperty('--header-grid-x', '0px');
+    header.style.setProperty('--header-grid-y', '0px');
+  });
+}
+
+const heroCards = document.querySelectorAll('.hero-card');
+
+if (canUsePointerParallax && heroCards.length) {
+  heroCards.forEach((card) => {
+    let cardParallaxTicking = false;
+
+    const syncCardGridParallax = (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - .5) || 0;
+      const y = ((event.clientY - rect.top) / rect.height - .5) || 0;
+
+      card.style.setProperty('--card-grid-x', `${x * 14}px`);
+      card.style.setProperty('--card-grid-y', `${y * 14}px`);
+      cardParallaxTicking = false;
+    };
+
+    card.addEventListener('pointermove', (event) => {
+      if (!cardParallaxTicking) {
+        window.requestAnimationFrame(() => syncCardGridParallax(event));
+        cardParallaxTicking = true;
+      }
+    }, { passive: true });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--card-grid-x', '0px');
+      card.style.setProperty('--card-grid-y', '0px');
+    });
+  });
+}
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch((error) => {

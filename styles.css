@@ -79,6 +79,8 @@ img {
 }
 
 .site-header {
+  --header-grid-x: 0px;
+  --header-grid-y: 0px;
   position: sticky;
   top: 16px;
   z-index: 20;
@@ -94,7 +96,28 @@ img {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
+  overflow: hidden;
   transition: background .28s ease, border-color .28s ease, box-shadow .28s ease, backdrop-filter .28s ease
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("assets/cavai_grid.svg");
+  background-size: 90px 90px;
+  background-position: var(--header-grid-x) var(--header-grid-y);
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 0%, rgba(0, 0, 0, .72) 48%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 0%, rgba(0, 0, 0, .72) 48%, transparent 82%);
+  opacity: 0;
+  transition: opacity .28s ease, background-position .18s ease-out
+}
+
+.site-header > * {
+  position: relative;
+  z-index: 1
 }
 
 .site-header.header-scrolled {
@@ -103,6 +126,10 @@ img {
   -webkit-backdrop-filter: blur(44px) saturate(180%) contrast(108%);
   border-color: rgba(255, 255, 255, .34);
   box-shadow: 0 18px 52px rgba(0, 0, 0, .14)
+}
+
+.site-header.header-scrolled::before {
+  opacity: .22
 }
 
 .brand img,
@@ -230,15 +257,13 @@ img {
   inset: 28px calc(var(--gutter) * -0.35);
   z-index: -1;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(16, 16, 16, .055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 16, 16, .055) 1px, transparent 1px);
-  background-size: 34px 34px;
+  background-image: url("assets/cavai_grid.svg");
+  background-size: 90px 90px;
   background-position: var(--grid-x) var(--grid-y);
   transform: translate3d(var(--grid-shift-x), var(--grid-shift-y), 0);
-  mask-image: radial-gradient(ellipse at 40% 45%, #000 0%, rgba(0, 0, 0, .82) 42%, transparent 74%);
-  -webkit-mask-image: radial-gradient(ellipse at 40% 45%, #000 0%, rgba(0, 0, 0, .82) 42%, transparent 74%);
-  opacity: .7;
+  mask-image: radial-gradient(ellipse at 38% 42%, #000 0%, rgba(0, 0, 0, .62) 30%, rgba(0, 0, 0, .16) 52%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 38% 42%, #000 0%, rgba(0, 0, 0, .62) 30%, rgba(0, 0, 0, .16) 52%, transparent 70%);
+  opacity: .24;
   transition: background-position .18s ease-out, transform .18s ease-out
 }
 
@@ -499,6 +524,8 @@ img {
 }
 
 .hero-card {
+  --card-grid-x: 0px;
+  --card-grid-y: 0px;
   position: relative;
   display: block;
   color: inherit;
@@ -511,6 +538,25 @@ img {
   backdrop-filter: blur(16px);
   overflow: hidden;
   transition: transform .34s cubic-bezier(.2, .8, .2, 1), box-shadow .34s ease
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("assets/cavai_grid.svg");
+  background-size: 90px 90px;
+  background-position: var(--card-grid-x) var(--card-grid-y);
+  mask-image: radial-gradient(ellipse at 36% 28%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at 36% 28%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 78%);
+  opacity: .26
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1
 }
 
 .hero-card:hover {
@@ -718,6 +764,29 @@ img {
   color: var(--ink)
 }
 
+.campaign-stat {
+  font-family: var(--display-font);
+  font-size: clamp(13px, 1.25vw, 17px);
+  line-height: 1.35;
+  font-weight: 300;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: -8px 0 2px
+}
+
+.contact-role {
+  font-family: var(--display-font);
+  font-size: clamp(10px, .86vw, 12px);
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: -24px 0 20px;
+  max-width: 46ch
+}
+
 .intro p {
   margin: 0 auto
 }
@@ -779,15 +848,13 @@ img {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(16, 16, 16, .05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 16, 16, .05) 1px, transparent 1px);
-  background-size: 34px 34px;
+  background-image: url("assets/cavai_grid.svg");
+  background-size: 90px 90px;
   background-position: var(--grid-x) var(--grid-y);
   transform: translate3d(var(--grid-shift-x), var(--grid-shift-y), 0);
   mask-image: radial-gradient(ellipse at 50% 45%, #000 0%, rgba(0, 0, 0, .75) 44%, transparent 78%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 0%, rgba(0, 0, 0, .75) 44%, transparent 78%);
-  opacity: .68;
+  opacity: .22;
   transition: background-position .18s ease-out, transform .18s ease-out
 }
 
@@ -949,6 +1016,7 @@ img {
 .linkedin-button:hover,
 .linkedin-button:focus-visible {
   border-color: rgba(74, 163, 255, .48);
+  background-color: #0077b5;
   box-shadow: 0 16px 38px rgba(10, 102, 194, .28),
     0 0 52px rgba(74, 163, 255, .3),
     0 0 76px rgba(145, 202, 255, .14)
@@ -977,14 +1045,14 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 26px 0
+  margin: 16px 0
 }
 
 .tags span {
   font-family: var(--display-font);
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 12px;
+  border-radius: 12px;
+  padding: 6px 10px;
   background: rgba(255, 255, 255, .42);
   font-size: 11px;
   font-weight: 300;
@@ -1142,7 +1210,6 @@ img {
   padding: 0;
   opacity: 0;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, .36);
   box-shadow: 0 12px 30px rgba(255, 79, 120, .18),
     0 0 38px rgba(255, 147, 64, .18);
   backdrop-filter: blur(18px) saturate(150%);
