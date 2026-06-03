@@ -397,6 +397,11 @@ img {
   animation: preview-arrow-nudge .82s cubic-bezier(.45, 0, .2, 1) infinite
 }
 
+.mail-cta:hover .button-icon,
+.mail-cta:focus-visible .button-icon {
+  animation: mail-send-lift 1.12s cubic-bezier(.45, 0, .2, 1) both
+}
+
 @keyframes star-revolution {
   to {
     transform: rotate(.5turn)
@@ -411,6 +416,29 @@ img {
 
   48% {
     transform: translateX(5px)
+  }
+}
+
+@keyframes mail-send-lift {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(0, 0)
+  }
+
+  45% {
+    opacity: .92;
+    transform: translateY(-7px)
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateY(-12px)
+  }
+
+  71% {
+    opacity: 0;
+    transform: translateY(7px)
   }
 }
 
@@ -911,6 +939,19 @@ img {
 
 .linkedin-button {
   gap: 9px
+}
+
+.linkedin-button::before {
+  background: radial-gradient(circle at 80% 18%, rgba(111, 181, 255, .7) 0%, rgba(73, 158, 255, .46) 22%, transparent 45%),
+    linear-gradient(135deg, #0077b5 0%, #0a66c2 48%, #4aa3ff 100%)
+}
+
+.linkedin-button:hover,
+.linkedin-button:focus-visible {
+  border-color: rgba(74, 163, 255, .48);
+  box-shadow: 0 16px 38px rgba(10, 102, 194, .28),
+    0 0 52px rgba(74, 163, 255, .3),
+    0 0 76px rgba(145, 202, 255, .14)
 }
 
 .linkedin-button svg {
