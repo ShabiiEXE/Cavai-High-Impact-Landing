@@ -1146,6 +1146,30 @@ img {
     0 18px 38px rgba(255, 116, 88, .24)
 }
 
+#odigeo .device-back,
+#odigeo .device-front {
+  border-radius: 15px
+}
+
+#odigeo .visual-link img:hover {
+  filter: none
+}
+
+#odigeo .device-back:hover,
+#odigeo .device-back:focus-visible,
+#odigeo .device-front:hover,
+#odigeo .device-front:focus-visible {
+  box-shadow: none
+}
+
+#odigeo .device-back:hover img,
+#odigeo .device-back:focus-visible img,
+#odigeo .device-front:hover img,
+#odigeo .device-front:focus-visible img {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .24),
+    0 18px 38px rgba(255, 116, 88, .18)
+}
+
 .ctv-overlay-art {
   justify-self: end;
   width: min(48vw, 620px);
