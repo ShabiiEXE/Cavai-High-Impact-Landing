@@ -1053,6 +1053,11 @@ img {
   margin: 0 0 18px
 }
 
+.format-content p strong {
+  font-weight: 500;
+  color: var(--ink)
+}
+
 .format-content > .button {
   min-width: 220px
 }
